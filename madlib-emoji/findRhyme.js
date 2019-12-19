@@ -2,6 +2,9 @@ const rhymes = require('rhymes');
 
 function findRhyme(word) {
     const wordRhymes = rhymes(word);
+    if (wordRhymes === []) {
+        return word;
+    }
     const rhymeWordObj = wordRhymes.reduce((highestScoreObj, currentObj) => {
         // console.log(highestScoreObj, currentObj);
         if (highestScoreObj.word === word) {
@@ -11,14 +14,9 @@ function findRhyme(word) {
         } else {
             return highestScoreObj;
         }
-    }, {word: "no rhyme", score: -10});
-    if (rhymeWordObj.word === "no rhyme") {
-        return word;
-    } else {
-        return rhymeWordObj.word;
-    }
+    }, {word: "no rhyme", score: 0});
+    return rhymeWordObj.word;
 }
-
-
-// console.log(findRhyme('cat'));
+// console.log(findRhyme('orange'));
+// console.log(rhymes('orange'));
 module.exports = findRhyme;
