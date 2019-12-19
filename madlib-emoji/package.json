@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "emoji-emotion": "^2.1.2"
+    "emoji-emotion": "^2.1.2",
+    "rhymes": "^1.0.3"
   }
 }
