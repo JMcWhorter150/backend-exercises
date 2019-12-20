@@ -14,4 +14,6 @@ function moo(text, eyes, tongue) {
     })
 }
 
-module.exports = moo;
+// module.exports = moo;
+
+// console.log(cowsay.say({text: "stuff and stuff", e: "Oo",}));
