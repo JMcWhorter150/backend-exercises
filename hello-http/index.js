@@ -20,13 +20,25 @@ const server = http.createServer((req, res) => {
             });
 
             res.end('<h1>File not found</h1>');
-        } else {
+        } else if (url.endsWith(".html")) {
             res.writeHead(200, {
                 "Content-Type": 'text/html'
             })
 
             const contents = buf.toString();
             res.end(contents);
+        } else if (url.endsWith(".css")) {
+            res.writeHead(200, {
+                "Content-Type": "text/css"
+            })
+
+            const contents = buf.toString();
+            res.end(contents);
+        } else if (url.endsWith(".jpg")) {
+            res.writeHead(200, {
+                "Content-Type": "image/jpg"
+            })
+            res.end(buf);
         }
     });
 

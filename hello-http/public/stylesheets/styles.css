@@ -4,3 +4,12 @@ body {
 h1 {
     color: purple;
 }
+
+.pictureFrame {
+    height: 500px;
+    width: 500px;
+}
+
+.pictureFrame img {
+    height: 100%;
+}
